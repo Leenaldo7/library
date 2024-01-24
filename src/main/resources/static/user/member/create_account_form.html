@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+
+<head>
+    <title>createAccount</title>
+</head>
+<body>
+<h2>Create Account</h2>
+<form id="registerForm">
+    <label for="name">name:</label><br>
+    <input type="text" id="name" name="username">
+    <button type="button" class="checkNameBtn">name check</button>
+    <p class="checkNameResult">이미 존재하는 이름입니다.
+
+    <p><label for="password">password:</label>
+    <br><input type="password" id="password" name="password">
+
+    <br><label for="email">email:</label><br>
+    <input type="email" id="email" name="email">
+    <button type="button" class="checkEmailBtn">email check</button>
+    <p class="checkEmailResult">이미 존재하는 이메일입니다.</p>
+
+    <p><button class="submitBtn" type="submit">Sign Up</button></p>
+</form>
+
+<script src="create_account_form.js" defer></script>
+<link rel="stylesheet" href="create_account_form.css">
+</body>
+</html>
