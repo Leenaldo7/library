@@ -1,8 +1,11 @@
+const checkEmailResult = document.querySelector(".checkEmailResult");
+const checkNameResult = document.querySelector(".checkNameResult");
+const homeBtn = document.querySelector(".homeBtn");
+
 document.querySelector("#registerForm").addEventListener("submit",registerConfirmFun);
 document.querySelector(".checkEmailBtn").addEventListener("click", checkEmailFun);
 document.querySelector(".checkNameBtn").addEventListener("click",checkNameFun);
-const checkEmailResult = document.querySelector(".checkEmailResult");
-const checkNameResult = document.querySelector(".checkNameResult");
+
 async function registerConfirmFun(event){
     event.preventDefault();
 
@@ -12,11 +15,14 @@ async function registerConfirmFun(event){
         email : document.querySelector("#email").value.toLowerCase()
     };
     const isNameEmpty = !(/^\S+$/).test(userData.name);
+    const isPasswordEmpty = !(/^\S+$/).test(userData.password);
     const isCorrectEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(userData.email);
-    if(isNameEmpty || !(isCorrectEmail)){
-        alert("이름 또는 이메일을 다시 확인해주세요");
+
+    if(isNameEmpty || isPasswordEmpty || !(isCorrectEmail)){
+        alert("입력 정보를 다시 확인해주세요");
         return;
     }
+
     try{
         const response = await fetch('http://localhost:8080/user/member/createAccountConfirm', {
             method : 'POST',
@@ -62,6 +68,12 @@ async function checkEmailFun(){
         console.error(error);
     }
 }
+
+homeBtn.addEventListener("click", function(){
+    location.href = "/";
+})
+
+
 async function checkNameFun(){
     const name = document.querySelector("#name").value.toLowerCase();
     const url = `http://localhost:8080/checkUserName?name=${encodeURIComponent(name)}`;

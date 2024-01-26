@@ -4,27 +4,30 @@
 
 <head>
     <title>createAccount</title>
+    <script src="create_account_form.js" defer></script>
+    <link rel="stylesheet" href="create_account_form.css">
 </head>
+
 <body>
-<h2>Create Account</h2>
-<form id="registerForm">
-    <label for="name">name:</label><br>
-    <input type="text" id="name" name="username">
-    <button type="button" class="checkNameBtn">name check</button>
-    <p class="checkNameResult">이미 존재하는 이름입니다.
+    <h2>Create Account</h2>
+    <form id="registerForm">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="username">
+        <button type="button" class="checkNameBtn">check</button>
+        <span class="checkNameResult">이미 존재하는 이름입니다.</span>
 
-    <p><label for="password">password:</label>
-    <br><input type="password" id="password" name="password">
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password">
 
-    <br><label for="email">email:</label><br>
-    <input type="email" id="email" name="email">
-    <button type="button" class="checkEmailBtn">email check</button>
-    <p class="checkEmailResult">이미 존재하는 이메일입니다.</p>
+        <label for="email">email:</label>
+        <input type="email" id="email" name="email">
+        <button type="button" class="checkEmailBtn">check</button>
+        <span class="checkEmailResult">이미 존재하는 이메일입니다.</span>
 
-    <p><button class="submitBtn" type="submit">Sign Up</button></p>
-</form>
-
-<script src="create_account_form.js" defer></script>
-<link rel="stylesheet" href="create_account_form.css">
+        <section class="btnContainer">
+            <button class="homeBtn" type="button">HOME</button>
+            <button class="submitBtn" type="submit">SIGN UP</button>
+        </section>
+    </form>
 </body>
 </html>
