@@ -13,15 +13,12 @@ public class LoginCheckService {
     @Autowired
     private UserCheckRepository userCheckRepository;
 
-    public ResponseEntity<?> checkCredentials(String username, String password) {
+    public Boolean checkCredentials(String username, String password) {
         Optional<User> userOptional = userCheckRepository.findByName(username);
         if (userOptional.isEmpty()) {
-            return ResponseEntity.badRequest().body("사용자 이름이 존재하지 않습니다");
+            return false;
         }
-        if(!userOptional.get().getPassword().equals(password)){
-            return ResponseEntity.badRequest().body("비밀번호가 잘못되었습니다");
-        }
-        return ResponseEntity.ok("로그인 성공");
+        return userOptional.get().getPassword().equals(password);
 
     }
 }

@@ -36,6 +36,7 @@ async function checkLogin(event){
 
                 const data = await response.text();
                 alert(data);
+                sessionStorage.setItem("userName", userData.name);
                 location.href = "/user"
 
         } catch(error){

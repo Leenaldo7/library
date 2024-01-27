@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -22,5 +24,10 @@ public class UserCheckController {
     public ResponseEntity<Boolean> checkAdminEmail(@RequestParam String email) {
         boolean isUnique = userCheckService.isEmptyEmail(email);
         return ResponseEntity.ok(isUnique);
+    }
+
+    @PostMapping("user/information")
+    public ResponseEntity<?> receiveUserInformation(@RequestBody UserDTO userDTO){
+        return ResponseEntity.ok().body(userCheckService.userInformation(userDTO.getName()));
     }
 }

@@ -19,4 +19,9 @@ public class UserCheckService {
         Optional<User> admin = userCheckRepository.findByEmail(email);
         return admin.isEmpty();
     }
+
+    public User userInformation(String name){
+        Optional<User> user = userCheckRepository.findByName(name);
+        return user.get();
+    }
 }
