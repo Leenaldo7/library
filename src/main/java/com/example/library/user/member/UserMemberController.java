@@ -27,5 +27,13 @@ public class UserMemberController {
         return userMemberService.registerUser(user);
     }
 
+    @RequestMapping(value ="/editEmail", method = RequestMethod.POST )
+    public ResponseEntity<?> editUserEmail(@RequestBody User user){
+        return userMemberService.editEmail(user);
+    }
 
+    @RequestMapping(value ="/editPassword", method = RequestMethod.POST )
+    public ResponseEntity<?> editUserPassword(@RequestBody User user){
+        return userMemberService.editPassword(user);
+    }
 }
