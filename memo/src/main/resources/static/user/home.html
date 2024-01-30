@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <script src="../user/home.js" defer></script>
+    <link rel="stylesheet" href="../user/home.css">
+</head>
+<body>
+<header class="header">
+    <div class="header_btn">
+        <button class="logoutBtn">로그아웃</button>
+        <button class="userInformationBtn">회원정보</button>
+    </div>
+</header>
+
+<section class="category-nav">
+    <!-- 카테고리 네비게이션 -->
+</section>
+
+<section class="board">
+    <header>
+        <h2>게시판</h2>
+        <div class="search-bar">
+            <input type="text" class="search" placeholder="제목 검색">
+        </div>
+    </header>
+
+    <table>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+            <th>작성일</th>
+        </tr>
+        </thead>
+        <tbody class="postContainer">
+
+        </tbody>
+    </table>
+
+
+    <div class="board-actions">
+        <button class="writeBtn">글쓰기</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 게시판. All rights reserved.</p>
+</footer>
+</body>
+</html>

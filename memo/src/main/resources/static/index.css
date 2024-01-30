@@ -1,0 +1,60 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.home_header {
+    background-color: #6a8e7f;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.home_header span {
+    font-size: 24px;
+}
+
+.home_header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    background-color: #4e6a58;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.home_header a:hover {
+    background-color: #3e5448;
+}
+
+section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+section a {
+    display: inline-block;
+    color: #4e6a58;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #4e6a58;
+    border-radius: 5px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+section a:hover {
+    color: #6a8e7f;
+    border-color: #6a8e7f;
+}
+
+/* Add the image as a background for the body or a specific section */
+body {
+    background-image: url('path_to_your_image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
