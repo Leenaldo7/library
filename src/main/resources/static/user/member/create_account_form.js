@@ -55,7 +55,8 @@ async function checkEmailFun(){
     try {
         const isCorrectEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
         const response = await fetch(url);
-        const isNotOverlapped  = await response.text() === 'true';
+        const textResponse = await response.text();
+        const isNotOverlapped = textResponse === 'true';
 
         if(isCorrectEmail && isNotOverlapped) {
             showCheckEmailResult(true);
@@ -80,7 +81,8 @@ async function checkNameFun(){
     const isNotNameEmpty = /^\S+$/.test(name);
     try {
         const response = await fetch(url);
-        const isNotOverlapped  = await response.text() === 'true';
+        const textResponse = await response.text();
+        const isNotOverlapped = textResponse === 'true';
 
         if(isNotNameEmpty && isNotOverlapped) {
             showCheckNameResult(true);

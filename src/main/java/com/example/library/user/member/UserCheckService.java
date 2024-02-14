@@ -16,6 +16,7 @@ public class UserCheckService {
     }
 
     public boolean isEmptyEmail(String email) {
+
         Optional<User> admin = userCheckRepository.findByEmail(email);
         return admin.isEmpty();
     }

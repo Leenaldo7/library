@@ -1,7 +1,22 @@
 const loginForm = document.querySelector("#loginForm");
 const homeBtn = document.querySelector(".homeBtn");
+const findBtnContainer = document.querySelector(".findBtnContainer");
 
 loginForm.addEventListener("submit", checkLogin);
+
+findBtnContainer.addEventListener("click", function(e){
+        const name = e.target.className;
+
+        switch(name){
+                case 'findId':
+                        location.href="/find_account_id";
+                        return;
+                case 'findPassword' :
+                        location.href="/find_account_pwd";
+                        return;
+
+        }
+})
 
 homeBtn.addEventListener("click", function(){
         location.href = "/";

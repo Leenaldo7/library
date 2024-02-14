@@ -7,14 +7,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-h2 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.loginContainer {
+.find-form-container {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
@@ -22,18 +18,25 @@ h2 {
     width: 300px;
 }
 
-#loginForm label {
-    margin-top: 10px;
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
     display: block;
     font-size: 14px;
     color: #333;
+    margin-bottom: 5px;
 }
 
-#loginForm input[type="text"],
-#loginForm input[type="password"] {
+.form-group input {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -47,37 +50,15 @@ button {
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block; /* Make the button block level to fill the form. */
+    width: 100%; /* Use full width. */
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 4px 0;
     transition-duration: 0.4s;
     cursor: pointer;
     border-radius: 4px;
 }
 
-button:hover {
+button.findBtn:hover {
     background-color: #4cae4c;
-}
-
-.homeBtn {
-    background-color: #f0ad4e;
-}
-
-.homeBtn:hover {
-    background-color: #ec971f;
-}
-
-.btnContainer{
-    display: flex;
-    justify-content: space-between;
-}
-
-.findBtnContainer{
-    margin-top: 20px;
-}
-
-.findId,.findPassword{
-    padding: 0;
-    background-color : white;
-    color: black;
 }
