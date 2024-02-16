@@ -35,5 +35,5 @@ public class Post {
     private String content;
 
 
-    // 다른 필드와 메서드가 필요하다면 여기에 추가
+
 }

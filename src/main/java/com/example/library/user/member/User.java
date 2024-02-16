@@ -25,6 +25,10 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    
+    @Column(name = "state")
+    private boolean state;
+
     @Column(name = "isadmin")
     private Boolean isadmin;
 }

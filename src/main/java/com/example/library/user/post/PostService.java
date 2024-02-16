@@ -14,7 +14,6 @@ public class PostService {
 
 
     public ResponseEntity<?> writePost(Post post){
-        System.out.println(post);
         postRepository.save(post);
         return ResponseEntity.ok("글 작성 완료");
     }
