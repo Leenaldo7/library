@@ -19,4 +19,9 @@ public class TemporaryUserController {
     public ResponseEntity<?> sendVerificationEmail(@RequestBody TemporaryUser user){
         return temporaryUserService.sendSimpleMessage(user, "이메일 인증 코드");
     }
+
+    @PostMapping("/find_account_pwd/sendEmail")
+    public ResponseEntity<?> sendVerificationFindEmail(@RequestBody TemporaryUser user){
+        return temporaryUserService.sendFindMessage(user, "이메일 인증 코드");
+    }
 }

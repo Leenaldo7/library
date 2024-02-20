@@ -26,7 +26,7 @@ public class UserMemberService {
             return ResponseEntity.badRequest().body("사용자 이름 또는 이메일이 이미 존재합니다.");
         }
         Optional<TemporaryUser> temporaryUser = temporaryUserRepository.findByEmail(user.getEmail());
-        if(temporaryUser.isPresent()){
+        if(temporaryUser.isPresent() && temporaryUser.get().isState()){
             user.setName(temporaryUser.get().getName());
             user.setEmail(temporaryUser.get().getEmail());
             user.setPassword(temporaryUser.get().getPassword());

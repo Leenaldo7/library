@@ -3,11 +3,6 @@ const checkNameResult = document.querySelector(".checkNameResult");
 const homeBtn = document.querySelector(".homeBtn");
 const sendEmailBtn = document.querySelector(".sendEmailBtn");
 
-const state = {
-    name_check : false,
-    email_check : false,
-    email_authentication : false
-}
 
 document.querySelector("#registerForm").addEventListener("submit",registerConfirmFun);
 document.querySelector(".checkEmailBtn").addEventListener("click", checkEmailFun);
@@ -106,7 +101,8 @@ async function checkNameFun(){
 }
 
 async function sendEmailCode(event){
-        event.preventDefault();
+    event.preventDefault();
+    showLoading();
 
     const userData = {
         name : document.querySelector("#name").value,
@@ -139,9 +135,9 @@ async function sendEmailCode(event){
                 alert(text);
                 document.getElementById("emailCode").style.display = "block";
                 document.querySelector("label[for='emailCode']").style.display = "block";
+
                 const sendEmailBtn = document.querySelector(".sendEmailBtn");
                 sendEmailBtn.innerText = "인증 코드 확인";
-
                 sendEmailBtn.removeEventListener("click", sendEmailCode);
                 sendEmailBtn.addEventListener("click", verifyEmailCode);
             } else {
@@ -150,6 +146,8 @@ async function sendEmailCode(event){
 
         } catch(e){
             alert(e);
+        } finally{
+            hideLoading();
         }
 
 }
@@ -196,7 +194,6 @@ function showCheckEmailResult(boolean){
     if(boolean){
         checkEmailResult.innerHTML = "사용 가능한 이메일입니다.";
         checkEmailResult.style.cssText = "display: block; color: blue; ";
-        state.email_check = true;
     }
     else{
         checkEmailResult.innerHTML = "사용 불가능한 이메일입니다."
@@ -213,4 +210,12 @@ function showCheckNameResult(boolean){
         checkNameResult.innerHTML = "사용 불가능한 이름입니다."
         checkNameResult.style.cssText = "display: block; color: red;";
     }
+}
+
+function showLoading() {
+    document.querySelector('.loading').style.display = 'block';
+}
+
+function hideLoading() {
+    document.querySelector('.loading').style.display = 'none';
 }

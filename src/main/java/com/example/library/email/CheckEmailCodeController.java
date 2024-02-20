@@ -15,4 +15,9 @@ public class CheckEmailCodeController {
     public ResponseEntity<?> checkEmailCode(@RequestBody EmailCode emailCode){
         return checkEmailCodeService.verificationCode(emailCode);
     }
+
+    @PostMapping("/find_account_pwd/checkEmailCode")
+    public ResponseEntity<?> checkFindEmailCode(@RequestBody EmailCode emailCode){
+        return checkEmailCodeService.verificationCode(emailCode);
+    }
 }

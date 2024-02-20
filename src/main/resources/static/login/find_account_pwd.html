@@ -17,9 +17,18 @@
             <label for="email">이메일 주소 입력:</label>
             <input type="email" id="email" name="email" required>
         </div>
+
+        <label for="emailCode" style="display:none;">인증 코드:</label>
+        <input type="text" id="emailCode" name="emailCode" style="display:none;">
+        <button class="sendEmailBtn" type="button">이메일 인증</button>
+        <span class="emailVerificationResult" style="display:none;"></span>
+
         <button type="submit" class="findBtn">비밀번호 찾기</button>
     </form>
-        <button class="homeBtn">돌아가기</button>
+    <div class="loading">
+        <div class="loadingFont">로딩 중...</div>
+    </div>
+    <button class="homeBtn">돌아가기</button>
 </div>
 </body>
 </html>
